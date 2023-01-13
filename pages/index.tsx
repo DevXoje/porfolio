@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import GaleryProjects from '../components/organisms/GaleryProjects'
 
 export default function Home () {
   return (
@@ -10,15 +11,12 @@ export default function Home () {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <main>
-        algo por dioooss
-        {/* <div className={styles.container}>
-                    <div>
-                        <span>With default Theme:</span>
-                    </div>
-                    <Switch {...label} defaultChecked/>
-                    <Switch {...label} />
-                    <Switch {...label} disabled defaultChecked/>
-                </div> */}
+        {/* Navbar */}
+        {/* About */}
+        <GaleryProjects />
+        {/* Project List */}
+        {/* Contact */}
+        {/* Footer */}
       </main>
     </>
   )
