@@ -15,7 +15,7 @@ export default class MyDocument extends Document {
   }
 }
 
-MyDocument.getInitialProps = async (ctx) => {
+/* MyDocument.getInitialProps = async (ctx) => {
   const originalRenderPage = ctx.renderPage
 
   ctx.renderPage = () =>
@@ -24,7 +24,7 @@ MyDocument.getInitialProps = async (ctx) => {
         function EnhanceApp (props) {
           return (
             <App
-                        /* emotionCache={cache} */
+                        /!* emotionCache={cache} *!/
               {...props}
             />
           )
@@ -38,3 +38,4 @@ MyDocument.getInitialProps = async (ctx) => {
     ...initialProps
   }
 }
+*/

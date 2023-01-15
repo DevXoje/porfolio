@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import GaleryProjects from '../components/organisms/GaleryProjects'
+import GalleryProjects from '../components/organisms/GalleryProjects'
 
 export default function Home () {
   return (
@@ -13,7 +13,7 @@ export default function Home () {
       <main>
         {/* Navbar */}
         {/* About */}
-        <GaleryProjects />
+        <GalleryProjects />
         {/* Project List */}
         {/* Contact */}
         {/* Footer */}
