@@ -6,8 +6,9 @@ import TimelineContent from '@mui/lab/TimelineContent'
 import { Typography } from '@mui/material'
 import TimelineItem from '@mui/lab/TimelineItem'
 import { Milestone as MilestoneModel } from '@models/Milestone'
+import { MouseEventHandler } from 'react'
 
-export default function Milestone ({ milestone }: { milestone: MilestoneModel }) {
+export default function Milestone ({ milestone, onClick }: { milestone: MilestoneModel, onClick: MouseEventHandler<HTMLSpanElement> }) {
   const { content, icon, oppositeContent, dotStyles, connectorColor } = milestone
   return (
     <TimelineItem>
@@ -21,7 +22,7 @@ export default function Milestone ({ milestone }: { milestone: MilestoneModel })
       </TimelineOppositeContent>
       <TimelineSeparator>
         <TimelineConnector sx={{ backgroundColor: connectorColor }} />
-        <TimelineDot color={dotStyles?.color} variant={dotStyles?.variant}>
+        <TimelineDot color={dotStyles?.color} variant={dotStyles?.variant} onClick={onClick} sx={{ cursor: 'pointer' }}>
           {icon}
         </TimelineDot>
         <TimelineConnector />
