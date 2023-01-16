@@ -13,6 +13,7 @@ export default function GalleryProjects () {
       <header>
         <h2>{title}</h2>
       </header>
+
       <Grid container spacing={3}>
         {projects}
       </Grid>
@@ -36,7 +37,7 @@ function getProjects () {
     {
       title: 'titulo 2',
       description: 'Lizards are a widespread group of squamate reptiles, with over 6,000\n' +
-          '              species, ranging across all continents except Antarctica',
+                '              species, ranging across all continents except Antarctica',
       image: { src: 'images/projects/gold.jpg', alt: 'Lizards are a widespread group of squamate reptiles' },
       links: {
         source: { href: '', content: 'LinkCode' },
@@ -46,7 +47,7 @@ function getProjects () {
     {
       title: 'titulo 3',
       description: 'Lizards are a widespread group of squamate reptiles, with over 6,000\n' +
-          '              species, ranging across all continents except Antarctica',
+                '              species, ranging across all continents except Antarctica',
       image: { src: 'images/projects/gold.jpg', alt: 'Lizards are a widespread group of squamate reptiles' },
       links: {
         source: { href: '', content: 'LinkCode' },
@@ -56,7 +57,7 @@ function getProjects () {
     {
       title: 'titulo 4',
       description: 'Lizards are a widespread group of squamate reptiles, with over 6,000\n' +
-          '              species, ranging across all continents except Antarctica',
+                '              species, ranging across all continents except Antarctica',
       image: { src: 'images/projects/green.jpg', alt: 'Lizards are a widespread group of squamate reptiles' },
       links: {
         source: { href: '', content: 'LinkCode' },
@@ -114,3 +115,9 @@ const projects = [{
 return projects.map(project => <Project key={project.title} project={project} />)
 }
 */
+
+export function ProjectsLayout ({ children }: { children: React.ReactNode }) {
+  return (
+    { children }
+  )
+}
