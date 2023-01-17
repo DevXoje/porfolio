@@ -3,8 +3,9 @@ import ScrollTop from '../atoms/ScrollTop'
 import { AiOutlineArrowUp } from 'react-icons/ai'
 import LinkList from '../molecules/LinkList'
 import ToggleTheme from '../atoms/ToggleTheme'
+import React from 'react'
 
-export default function Navbar (props: any) {
+const Navbar = (props: any) => {
   return (
     <>
       <AppBar>
@@ -25,6 +26,7 @@ export default function Navbar (props: any) {
     </>
   )
 }
+export default Navbar
 /*
 * import * as React from 'react';
 import AppBar from '@mui/material/AppBar';

@@ -7,7 +7,7 @@ import Navbar from '../components/organisms/Navbar'
 import Footer from '../components/organisms/Footer'
 
 export default function RootLayout ({ children }: { children: React.ReactNode }) {
-  const initialThemeUser = initialTheme(window)
+  const initialThemeUser:ThemeOptions = 'dark'// initialTheme(window)
   const [mode, setMode] = React.useState<ThemeOptions>(initialThemeUser)
   const colorMode = React.useMemo(
     () => ({

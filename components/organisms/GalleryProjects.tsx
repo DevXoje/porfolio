@@ -8,22 +8,24 @@ import { Grid } from '@mui/material'
 export default function GalleryProjects () {
   const projects = getProjects()
   const title = 'titulo galeria'
+  const renderProjects = projects.map(project =>
+    <Grid item xs={12} sm={6} md={4} lg={3} key={project.title}>
+      <Project project={project} />
+    </Grid>)
   return (
     <section>
       <header>
         <h2>{title}</h2>
       </header>
-
       <Grid container spacing={3}>
-        {projects}
+        {renderProjects}
       </Grid>
-
     </section>
   )
 }
 
-function getProjects () {
-  const projects: ProjectModel[] = [
+function getProjects (): ProjectModel[] {
+  return [
     {
       title: 'titulo 1',
       description: 'Lizards are a widespread group of squamate reptiles, with over 6,000\n' +
@@ -65,11 +67,6 @@ function getProjects () {
       }
     }
   ]
-  return projects.map(project =>
-    <Grid item xs={12} sm={6} md={4} lg={3} key={project.title}>
-      <Project project={project} />
-    </Grid>
-  )
 }
 
 /*

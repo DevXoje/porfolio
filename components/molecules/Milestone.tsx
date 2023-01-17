@@ -6,12 +6,12 @@ import TimelineContent from '@mui/lab/TimelineContent'
 import { Typography } from '@mui/material'
 import TimelineItem from '@mui/lab/TimelineItem'
 import { Milestone as MilestoneModel } from '@models/Milestone'
-import { MouseEventHandler } from 'react'
 
-export default function Milestone ({ milestone, onClick }: { milestone: MilestoneModel, onClick: MouseEventHandler<HTMLSpanElement> }) {
+export default function Milestone ({ milestone }: { milestone: MilestoneModel}) {
   const { content, icon, oppositeContent, dotStyles, connectorColor } = milestone
   return (
-    <TimelineItem>
+    <TimelineItem className='milestone'>
+
       <TimelineOppositeContent
         sx={{ m: 'auto 0' }}
         align='right'
@@ -22,13 +22,13 @@ export default function Milestone ({ milestone, onClick }: { milestone: Mileston
       </TimelineOppositeContent>
       <TimelineSeparator>
         <TimelineConnector sx={{ backgroundColor: connectorColor }} />
-        <TimelineDot color={dotStyles?.color} variant={dotStyles?.variant} onClick={onClick} sx={{ cursor: 'pointer' }}>
+        <TimelineDot color={dotStyles?.color} variant={dotStyles?.variant} sx={{ cursor: 'pointer' }}>
           {icon}
         </TimelineDot>
         <TimelineConnector />
       </TimelineSeparator>
       <TimelineContent sx={{ py: '12px', px: 2 }}>
-        <Typography variant='h6' component='span'>
+        <Typography variant='h6' component='span' className='milestone__title'>
           {content.title}
         </Typography>
         <Typography>{content.description}</Typography>
