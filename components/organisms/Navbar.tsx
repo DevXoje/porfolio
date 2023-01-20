@@ -2,8 +2,9 @@ import { AppBar, Fab, Toolbar, Typography } from '@mui/material'
 import ScrollTop from '../atoms/ScrollTop'
 import { AiOutlineArrowUp } from 'react-icons/ai'
 import LinkList from '../molecules/LinkList'
-import ToggleTheme from '../atoms/ToggleTheme'
+// import ToggleTheme from '../atoms/ToggleTheme'
 import React from 'react'
+import ModeSwitcher from '../atoms/ModeSwitcher'
 
 const Navbar = () => {
   return (
@@ -14,7 +15,7 @@ const Navbar = () => {
             Xoje Developer
           </Typography>
           <LinkList />
-          <ToggleTheme />
+          <ModeSwitcher />
         </Toolbar>
       </AppBar>
       <Toolbar id='back-to-top-anchor' />

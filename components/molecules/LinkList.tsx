@@ -1,7 +1,7 @@
 import { Link as LinkModel } from '@models/Link'
 import { Link } from '@mui/material'
 
-export default function LinkList () {
+const LinkList = () => {
   const pages: LinkModel[] = [
     {
       text: 'Home',
@@ -29,7 +29,15 @@ export default function LinkList () {
       // icon: <GrContact />
     }
   ]
-  const allLinks = pages.map((link) => <Link key={link.text} component='button' variant='body1'>{link.text}</Link>)
+  const allLinks = pages.map((link) =>
+    <Link
+      key={link.text}
+      component='button'
+      variant='body1'
+      color='text.primary'
+    >
+      {link.text}
+    </Link>)
 
   return (
     <>
@@ -37,3 +45,4 @@ export default function LinkList () {
     </>
   )
 }
+export default LinkList

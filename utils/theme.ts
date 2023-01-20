@@ -1,6 +1,28 @@
-import { createTheme, useTheme as useThemeMUI } from '@mui/material/styles'
+import {
+  createTheme, useTheme as useThemeMUI,
+  experimental_extendTheme as extendTheme
+} from '@mui/material/styles'
 import * as React from 'react'
+import { pink } from '@mui/material/colors'
 
+export const theme = extendTheme({
+  colorSchemes: {
+    light: {
+      palette: {
+        primary: {
+          main: pink[600]
+        }
+      }
+    },
+    dark: {
+      palette: {
+        primary: {
+          main: pink[400]
+        }
+      }
+    }
+  }
+})
 export const lightTheme = createTheme({
   palette: {
     mode: 'light',

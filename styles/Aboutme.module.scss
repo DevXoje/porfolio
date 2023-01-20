@@ -1,6 +1,8 @@
 .aboutMe {
-  background-color: #383b3d;
-  color: #f7f8f9;
+  //background-color: #383b3d;
+  //background-color:var(--mui-palette-primary-main);
+  //color: #f7f8f9;
+  //color: var(--mui-palette-primary-contrastText);
   padding: 10px;
   max-width: 490px;
   margin: 0 auto;
@@ -35,8 +37,12 @@
     }
     .description{}
    .button{
-     color: white;
-     border-color: white;
+     color: var(--mui-palette-primary-contrastText);
+     border-color: var(--mui-palette-primary-contrastText);
+     :hover{
+       text-decoration: none;
+
+     }
    }
   }
 }

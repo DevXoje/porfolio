@@ -1,43 +1,49 @@
 'use client'
 
 import React from 'react'
-import { Paper, ThemeProvider } from '@mui/material'
-import { lightTheme, darkTheme, ColorModeContext, ThemeOptions } from '../utils/theme'
+import { Paper } from '@mui/material'
+import { theme } from '../utils/theme'
 import Navbar from '../components/organisms/Navbar'
 import Footer from '../components/organisms/Footer'
+import { Experimental_CssVarsProvider as CssVarsProvider, getInitColorSchemeScript } from '@mui/material/styles'
 
 export default function RootLayout ({ children }: { children: React.ReactNode }) {
-  const initialThemeUser:ThemeOptions = 'dark'// initialTheme(window)
-  const [mode, setMode] = React.useState<ThemeOptions>(initialThemeUser)
-  const colorMode = React.useMemo(
-    () => ({
-      toggleColorMode: () => {
-        setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'))
-      }
-    }),
-    []
-  )
-  const theme = React.useMemo(
-    () =>
-      (mode === 'light') ? lightTheme : darkTheme
-    ,
-    [mode]
-  )
+  /* const initialThemeUser:ThemeOptions = 'dark'// initialTheme(window)
+    const [mode, setMode] = React.useState<ThemeOptions>(initialThemeUser)
+    const colorMode = React.useMemo(
+      () => ({
+        toggleColorMode: () => {
+          setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'))
+        }
+      }),
+      []
+    )
+    const theme = React.useMemo(
+      () =>
+        (mode === 'light') ? lightTheme : darkTheme
+      ,
+      [mode]
+    ) */
   return (
     <html>
 
       <body>
-        <ColorModeContext.Provider value={colorMode}>
-          <ThemeProvider theme={theme}>
+        <CssVarsProvider theme={theme}>
+          {/* <ColorModeContext.Provider value={colorMode}>
+            <ThemeProvider theme={theme}>
+*/}
+          {getInitColorSchemeScript()}
+          <Navbar />
 
-            <Navbar />
-            <Paper>
-              {children}
-            </Paper>
-            <Footer />
+          <Paper>
+            {children}
+          </Paper>
+          <Footer />
 
-          </ThemeProvider>
-        </ColorModeContext.Provider>
+          {/* </ThemeProvider>
+          </ColorModeContext.Provider>
+       */}
+        </CssVarsProvider>
       </body>
     </html>
 
