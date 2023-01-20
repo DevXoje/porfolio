@@ -3,12 +3,12 @@ const nextConfig = {
   reactStrictMode: true,
   experimental: {
     appDir: true
-  },
-  images: {
+  }
+  /* images: {
     loader: 'custom',
     loaderFile: 'utils/ImageLoader.ts'
     // disableStaticImages: true,
-  }
+  } */
 
 }
 

@@ -18,8 +18,10 @@ export default function PhotoPerson ({ photo }: { photo:ImageProps }) {
       >
         <Paper elevation={24}>
           <Image
-            src='images/person.png' alt={photo.alt}
-            style={{ width: '100%', height: 'auto' }}
+            src={photo.src}
+            alt={photo.alt}
+            width={photo.width}
+            height={photo.height}
           />
         </Paper>
       </Box>

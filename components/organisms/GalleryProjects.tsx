@@ -9,15 +9,15 @@ export default function GalleryProjects () {
   const projects = getProjects()
   const title = 'titulo galeria'
   const renderProjects = projects.map(project =>
-    <Grid item xs={12} sm={6} md={4} lg={3} key={project.title}>
+    <Grid item xs={12} sm={6} md={4} lg={3} key={project.title} className='hidden project'>
       <Project project={project} />
     </Grid>)
   return (
-    <section>
+    <section className='hidden'>
       <header>
         <h2>{title}</h2>
       </header>
-      <Grid container spacing={3}>
+      <Grid container spacing={3} className='projects'>
         {renderProjects}
       </Grid>
     </section>

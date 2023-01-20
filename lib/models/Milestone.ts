@@ -7,7 +7,7 @@ export type MilestoneContent = { title: string; description: string }
 export type Milestone = {
     oppositeContent: string;
     content: MilestoneContent;
-    icon: JSX.Element;
+    icon?: JSX.Element;
     dotStyles?: TimelineDotProps,
     connectorColor?: string
 }

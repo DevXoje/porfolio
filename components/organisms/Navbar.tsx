@@ -5,7 +5,7 @@ import LinkList from '../molecules/LinkList'
 import ToggleTheme from '../atoms/ToggleTheme'
 import React from 'react'
 
-const Navbar = (props: any) => {
+const Navbar = () => {
   return (
     <>
       <AppBar>
@@ -18,7 +18,7 @@ const Navbar = (props: any) => {
         </Toolbar>
       </AppBar>
       <Toolbar id='back-to-top-anchor' />
-      <ScrollTop {...props}>
+      <ScrollTop>
         <Fab size='small' aria-label='scroll back to top'>
           <AiOutlineArrowUp />
         </Fab>
