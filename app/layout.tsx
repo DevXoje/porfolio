@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { Paper, ThemeProvider } from '@mui/material'
-import { lightTheme, darkTheme, ColorModeContext, ThemeOptions, initialTheme } from '../utils/theme'
+import { lightTheme, darkTheme, ColorModeContext, ThemeOptions } from '../utils/theme'
 import Navbar from '../components/organisms/Navbar'
 import Footer from '../components/organisms/Footer'
 

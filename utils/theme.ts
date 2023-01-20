@@ -1,4 +1,4 @@
-import { createTheme } from '@mui/material/styles'
+import { createTheme, useTheme as useThemeMUI } from '@mui/material/styles'
 import * as React from 'react'
 
 export const lightTheme = createTheme({
@@ -33,9 +33,38 @@ export const darkTheme = createTheme({
         }), */
   }
 })
+export type ThemeOptions='dark'|'light'
+// export const initialTheme = (window:Window) => window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+export const useTheme = () => {
+  const theme = useThemeMUI()
+  const currentMode = 'dark'
+  const initialThemeUser: ThemeOptions = 'dark'// initialTheme(window)
+  const [mode, setMode] = React.useState<ThemeOptions>(initialThemeUser)
+
+  const toggleColorMode = () => {
+    setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'))
+  }
+  const applyColorMode = () =>
+    (mode === 'light') ? lightTheme : darkTheme
+
+  const colorMode = React.useMemo(
+    () => ({
+      toggleColorMode
+    }),
+    []
+  )
+  const currentTheme = React.useMemo(
+    applyColorMode
+    ,
+    [mode]
+  )
+  const ColorModeContext = React.createContext({
+    toggleColorMode: () => {
+    }
+  })
+  return { currentMode, currentTheme, colorMode, ColorModeContext, initialThemeUser, theme }
+}
 export const ColorModeContext = React.createContext({
   toggleColorMode: () => {
   }
 })
-export type ThemeOptions='dark'|'light'
-export const initialTheme = (window:Window) => window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'

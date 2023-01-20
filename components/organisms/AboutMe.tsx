@@ -20,10 +20,10 @@ export default function AboutMe () {
           />
         </Grid>
         <Grid item xs={12} md={6} className={styles.aboutMe__content}>
-          <Typography variant='h2'>titulo</Typography>
-          <Typography variant='h4'>titulo</Typography>
-          <Typography variant='body1'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae atque ullam perferendis harum, nisi porro voluptate, iste consequuntur enim reprehenderit architecto consectetur cum? Totam ad molestias natus illum illo officia.</Typography>
-          <Link href=''><Button variant='outlined'>Hire me</Button></Link>
+          <Typography variant='h2' className={styles.title}>Jose Vilches</Typography>
+          <Typography variant='h4' className={styles.subtitle}>software developer</Typography>
+          <Typography variant='body1' className={styles.description}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae atque ullam perferendis harum, nisi porro voluptate, iste consequuntur enim reprehenderit architecto consectetur cum? Totam ad molestias natus illum illo officia.</Typography>
+          <Link href=''><Button variant='outlined' className={styles.button}>Hire me</Button></Link>
         </Grid>
         {/* <Grid xs={6} item>
           <Grid xs={12} item>

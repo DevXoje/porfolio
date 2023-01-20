@@ -10,9 +10,10 @@ const HomePage = () =>
   <>
     <main className={styles.main}>
       <AboutMe />
+      <SkillsAndExperience />
+
       <GalleryProjects />
       {/* <TimeLineStudies /> */}
-      <SkillsAndExperience />
     </main>
 
     <main className={styles.main}>

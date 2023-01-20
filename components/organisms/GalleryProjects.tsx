@@ -4,18 +4,18 @@ import Project from '../molecules/Project'
 import { Project as ProjectModel } from '@models/Project'
 import React from 'react'
 import { Grid } from '@mui/material'
-
+import styles from '../../styles/Project.module.scss'
 export default function GalleryProjects () {
   const projects = getProjects()
   const title = 'titulo galeria'
   const renderProjects = projects.map(project =>
-    <Grid item xs={12} sm={6} md={4} lg={3} key={project.title} className='hidden project'>
+    <Grid item xs={12} sm={4} key={project.title} className='hidden project'>
       <Project project={project} />
     </Grid>)
   return (
-    <section className='hidden'>
+    <section className={styles.gallery_projects}>
       <header>
-        <h2>{title}</h2>
+        <h2 className={styles.gallery_projects__title}>{title}</h2>
       </header>
       <Grid container spacing={3} className='projects'>
         {renderProjects}
