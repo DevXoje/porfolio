@@ -1,7 +1,9 @@
+'use client'
+
 import Skills from './Skills'
 import Experiences from './Experiences'
 import { Card, Grid } from '@mui/material'
-import styles from '../../styles/SkillsAndExperience.module.scss'
+import styles from '@styles/SkillsAndExperience.module.scss'
 import { useEffect, useRef } from 'react'
 
 const SkillsAndExperience = () => {

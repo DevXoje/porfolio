@@ -1,0 +1,18 @@
+{
+  "home": {
+  },
+  "Welcome to React": "algo joder mas",
+  "about me": {},
+  "soft Skills": {},
+  "projects": {},
+  "contact": {},
+  "navbar": {
+    "title": "Xoje Developer",
+
+    "home": "inicio",
+    "about me": "sobre mi",
+    "soft skills": "habilidades blandas",
+    "projects": "proyectos",
+    "contact": "contacto"
+  }
+}

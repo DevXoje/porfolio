@@ -24,7 +24,10 @@
       }
     ],
     "paths": {
-      "@models/*": ["lib/models/*"]
+      "@models/*": ["lib/models/*"],
+      "@styles/*": ["styles/*"],
+      "@components/*": ["components/*"],
+      "@utils/*": ["utils/*"],
     }
   },
   "include": [

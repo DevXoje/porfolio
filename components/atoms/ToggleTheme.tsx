@@ -1,8 +1,9 @@
+'use client'
 import * as React from 'react'
 
 import { MdDarkMode, MdLightMode } from 'react-icons/md'
 import { IconButton, useTheme } from '@mui/material'
-import { ColorModeContext } from '../../utils/theme'
+import { ColorModeContext } from '@utils/theme'
 
 export default function ToggleTheme () {
   const theme = useTheme()

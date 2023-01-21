@@ -1,54 +1,37 @@
 'use client'
 
-import React from 'react'
 import { Paper } from '@mui/material'
-import { theme } from '../utils/theme'
-import Navbar from '../components/organisms/Navbar'
-import Footer from '../components/organisms/Footer'
+import { theme } from '@utils/theme'
+import { Navbar, Footer } from '@components/organisms'
 import { Experimental_CssVarsProvider as CssVarsProvider, getInitColorSchemeScript } from '@mui/material/styles'
+import React from 'react'
+import { dir } from 'i18next'
+import { Params } from 'next/dist/shared/lib/router/utils/route-matcher'
+import '../i18n'
+import { getDictionary } from '../i18n/dictionaries'
 
-export default function RootLayout ({ children }: { children: React.ReactNode }) {
-  /* const initialThemeUser:ThemeOptions = 'dark'// initialTheme(window)
-    const [mode, setMode] = React.useState<ThemeOptions>(initialThemeUser)
-    const colorMode = React.useMemo(
-      () => ({
-        toggleColorMode: () => {
-          setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'))
-        }
-      }),
-      []
-    )
-    const theme = React.useMemo(
-      () =>
-        (mode === 'light') ? lightTheme : darkTheme
-      ,
-      [mode]
-    ) */
+const RootLayout = ({ children, params }:
+        { children: React.ReactNode, params:Params}) => {
+  const dictionary = React.use(getDictionary(params.lang))
+
   return (
-    <html>
-
+    <html lang={params.lang} dir={dir(params.lang)}>
       <body>
         <CssVarsProvider theme={theme}>
-          {/* <ColorModeContext.Provider value={colorMode}>
-            <ThemeProvider theme={theme}>
-*/}
           {getInitColorSchemeScript()}
-          <Navbar />
-
+          <Navbar dictionary={dictionary.navbar} />
           <Paper>
+
             {children}
           </Paper>
           <Footer />
-
-          {/* </ThemeProvider>
-          </ColorModeContext.Provider>
-       */}
         </CssVarsProvider>
       </body>
     </html>
-
   )
 }
+
+export default RootLayout
 
 /*
 *

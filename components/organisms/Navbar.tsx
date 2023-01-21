@@ -1,21 +1,25 @@
 import { AppBar, Fab, Toolbar, Typography } from '@mui/material'
-import ScrollTop from '../atoms/ScrollTop'
+import { ScrollTop, LanguageSwitcher } from '../atoms'
 import { AiOutlineArrowUp } from 'react-icons/ai'
 import LinkList from '../molecules/LinkList'
-// import ToggleTheme from '../atoms/ToggleTheme'
 import React from 'react'
 import ModeSwitcher from '../atoms/ModeSwitcher'
+import { withTranslation } from 'react-i18next'
+import { TFunction } from 'i18next'
 
-const Navbar = () => {
+// const Navbar = ({ t }:{t:TFunction}) => {
+const Navbar = ({ dictionary }:{dictionary:any}) => {
   return (
     <>
       <AppBar>
         <Toolbar>
-          <Typography variant='h6' component='div'>
-            Xoje Developer
+          <Typography variant='h6' component='div' width={300}>
+            {dictionary.title}
           </Typography>
           <LinkList />
           <ModeSwitcher />
+          <LanguageSwitcher />
+          {/* <LanguageSwitcher /> */}
         </Toolbar>
       </AppBar>
       <Toolbar id='back-to-top-anchor' />
@@ -27,6 +31,8 @@ const Navbar = () => {
     </>
   )
 }
+
+// export default withTranslation()(Navbar)
 export default Navbar
 /*
 * import * as React from 'react';

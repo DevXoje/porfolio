@@ -1,5 +1,5 @@
 import {
-  createTheme, useTheme as useThemeMUI,
+  createTheme,
   experimental_extendTheme as extendTheme
 } from '@mui/material/styles'
 import * as React from 'react'
@@ -57,7 +57,7 @@ export const darkTheme = createTheme({
 })
 export type ThemeOptions='dark'|'light'
 // export const initialTheme = (window:Window) => window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-export const useTheme = () => {
+/* export const useTheme = () => {
   const theme = useThemeMUI()
   const currentMode = 'dark'
   const initialThemeUser: ThemeOptions = 'dark'// initialTheme(window)
@@ -85,7 +85,7 @@ export const useTheme = () => {
     }
   })
   return { currentMode, currentTheme, colorMode, ColorModeContext, initialThemeUser, theme }
-}
+} */
 export const ColorModeContext = React.createContext({
   toggleColorMode: () => {
   }

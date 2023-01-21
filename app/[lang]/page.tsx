@@ -1,28 +1,27 @@
 'use client'
 
-import styles from '../styles/Porfolio.module.scss'
+import styles from '@styles/Porfolio.module.scss'
 import './global.scss'
-import { GalleryProjects, AboutMe, SkillsAndExperience } from '../components/organisms'
-import dynamic from 'next/dynamic'
-
-const TimeLineStudies = dynamic(() => import('../components/organisms/TimeLineStudies'), { ssr: false })
-const HomePage = () =>
-  <>
+import { GalleryProjects, AboutMe, SkillsAndExperience } from '@components/organisms'
+import { Locale } from '../i18n/i18n-config'
+import React, { useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
+// const TimeLineStudies = dynamic(() => import('../components/organisms/TimeLineStudies'), { ssr: false })
+// const HomePage = async () => {
+const HomePage = ({ params: { lang } }: { params: { lang: Locale }}) => {
+  const { i18n } = useTranslation()
+  useEffect(() => {
+    i18n.changeLanguage(lang).then(r => console.log('change language', r))
+  }, [])
+  return (
     <main className={styles.main}>
       <AboutMe />
       <SkillsAndExperience />
-
       <GalleryProjects />
       {/* <TimeLineStudies /> */}
     </main>
-
-    <main className={styles.main}>
-      <div className={styles.container}>
-        <div className={styles.left}>Left</div>
-        <div className={styles.right}>Right</div>
-      </div>
-    </main>
-  </>
+  )
+}
 export default HomePage
 /* useEffect(() => {
     const observer = new IntersectionObserver((entries) => {

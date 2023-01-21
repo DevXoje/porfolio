@@ -1,3 +1,5 @@
+'use client'
+
 import * as React from 'react'
 import { Milestone as MilestoneModel } from '@models/Milestone'
 import { timelineContentClasses, timelineOppositeContentClasses } from '@mui/lab'
